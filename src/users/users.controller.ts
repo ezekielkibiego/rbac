@@ -19,24 +19,26 @@ export class UsersController {
   async create(@Body() createUserDto: CreateUserDto) {
     const {
       email,
-      password: plainPassword, // Ensure this field is provided
+      password,
       firstName,
       lastName,
       phone,
       address,
       kraPin,
       otherDocuments,
+      roleIds,
     } = createUserDto;
 
     return this.usersService.create(
       email,
-      plainPassword,
+      password,
       firstName,
       lastName,
       phone,
       address,
       kraPin,
       otherDocuments,
+      roleIds,
     );
   }
 
